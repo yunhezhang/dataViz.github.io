@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<head>
+    <title>Fuel Efficiency</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body onload="loadScene1(); loadScene2(); loadScene3();">
+    <h1 id="intro">2017 Fuel Efficiency</h1>
+    <div>
+        <hr>
+        <h3>
+            Due to the recent gas price surge, more people are interested in Fuel Efficiency and how to reduce costs on fuel. 
+            In this interactive visualization, we want to understand Fuel Efficiency and seek the relationships between some factors and the mileages of various automobiles.
+            Those factors include engine cylinders, fuel type and the make of the vehicle.
+        </h3>
+        <ul>
+            <li>
+                <a href="#one" class="contents">What is the relationship between fuel type and the mileage?</a>
+            </li>
+            <li>
+                <a href="#two" class="contents">What is the relationship between number of engine cylinders and the mileage?</a>
+            </li>
+            <li>
+                <a href="#three" class="contents">Which vehicle brands have good Fuel Efficiency?</a>
+            </li>
+        </ul>
+        <hr>
+
+    </div>
+    <a href="#two" class="back">Next</a>
+    <h2 id="one">What is the relationship between fuel type and the mileage?</h2>
+    <p>See how fuel type affects mileage. Click on the buttons to explore each category. </p>
+    <div>
+        <button id="highway" onclick="changeOnFuel('AverageHighwayMPG')">Average Highway MPG</button>
+        <button id="city" onclick="changeOnFuel('AverageCityMPG')">Average City MPG</button>
+    </div>
+    <svg id="scene2" width=1050 height=800></svg>
+
+    <hr>
+    <a href="#intro" class="back">Back to Top</a>
+    <a href="#one" class="back">Previous</a>
+    <a href="#three" class="back">Next</a>
+
+    <h2 id="two">What is the relationship between number of engine cylinders and the mileage?</h2>
+    <p>See how number of engine cylinders affects mileage. Click on the buttons to explore each category. </p>
+    <div>
+        <button id="highway" onclick="changeOnCyl('AverageHighwayMPG')">Average Highway MPG</button>
+        <button id="city" onclick="changeOnCyl('AverageCityMPG')">Average City MPG</button>
+    </div>
+    <svg id="scene3" width=1050 height=800></svg>
+    <hr>
+
+    <a href="#intro" class="back">Back to Top</a>
+    <a href="#two" class="back">Previous</a>
+    <h2 id="three">Which vehicle brands have good Fuel Efficiency?</h2>
+    <p>See how the highway and city mileages compare for major vehicle brands. Click on the buttons to explore each category. </p>
+    <div>
+        <button id="highway" onclick="changeOnBrand('AverageHighwayMPG')">Average Highway MPG</button>
+        <button id="city" onclick="changeOnBrand('AverageCityMPG')">Average City MPG</button>
+    </div>
+    <svg id="scene1" width=1050 height=900>
+        <text x="900" y="600">Good gas mileage</text>
+
+        <line x1="0" y1="600" x2="900" y2="600" stroke="black" stroke-dasharray="4" />
+    </svg>
+
+    <!-- Script -->
+    <script src="visulize.js"></script>
+</body>
+
+</html>
